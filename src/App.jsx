@@ -17,12 +17,13 @@ const skills = [
  const projects = [
   {
     number: '01',
-    title: 'Keerthana-Tejaswi',
-    category: 'Student Wellness',
-    description: 'A student wellness monitoring application designed to help monitor student well-being.',
-    tags: ['TypeScript'],
-    icon: BrainCircuit,
-    status: 'GitHub project',
+    title: 'Smart AI',
+    category: 'AI · Traffic Management',
+    description: 'An intelligent traffic management system that analyzes traffic conditions, detects congestion hotspots and helps optimize routes.',
+    tags: ['Python', 'AI', 'Traffic Analytics'],
+    icon: Workflow,
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/SMART-AI',
   },
   {
     number: '02',
@@ -31,7 +32,8 @@ const skills = [
     description: 'An intelligent emergency dispatch system that selects suitable ambulances and routes based on emergency severity, ambulance availability, distance and traffic.',
     tags: ['Python', 'Algorithms', 'Route Optimization'],
     icon: Cpu,
-    status: 'GitHub project',
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/SMART-AMBULANCE-ROUTE-SELECTION',
   },
   {
     number: '03',
@@ -40,7 +42,8 @@ const skills = [
     description: 'A MERN-stack study planner that helps students organize subjects, schedule study sessions, manage tasks and track study progress.',
     tags: ['MongoDB', 'Express', 'React', 'Node.js'],
     icon: Terminal,
-    status: 'GitHub project',
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/STUDY-SPARK',
   },
   {
     number: '04',
@@ -49,7 +52,8 @@ const skills = [
     description: 'MindfulMood is a digital mental wellness tracker for recording daily moods, emotions and personal reflections.',
     tags: ['HTML', 'Web Development'],
     icon: BrainCircuit,
-    status: 'GitHub project',
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/MANTAL-WELLNESS-TRACKER',
   },
   {
     number: '05',
@@ -58,16 +62,18 @@ const skills = [
     description: 'Uses historical weather data, Python and machine learning to analyze weather patterns and predict future conditions.',
     tags: ['Python', 'Data Science', 'Machine Learning'],
     icon: Database,
-    status: 'GitHub project',
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/WEATHER-DATA-ANALYSIS',
   },
   {
     number: '06',
-    title: 'Smart-AI',
-    category: 'AI · Traffic Management',
-    description: 'An intelligent traffic management system that analyzes traffic conditions, detects congestion hotspots and helps optimize routes.',
-    tags: ['Python', 'AI', 'Traffic Analytics'],
-    icon: Workflow,
-    status: 'GitHub project',
+    title: 'Keerthana Tejaswi',
+    category: 'Portfolio · TypeScript',
+    description: 'A personal portfolio repository showcasing projects, skills and development work.',
+    tags: ['TypeScript', 'Portfolio'],
+    icon: Code2,
+    status: 'GitHub repository',
+    link: 'https://github.com/keerthanatejaswi2-lgtm/Keerthana-Tejaswi',
   },
 ];
 const achievements = [
@@ -79,7 +85,7 @@ const achievements = [
   'Artificial Intelligence Internship – Codec Technologies Pvt. Ltd.',
 ];
 
-const navItems = ['Home', 'About', 'Skills', 'Projects','Certificates', 'Education', 'Contact'];
+const navItems = ['Home', 'About', 'Education', 'Skills', 'Projects', 'Certificates', 'Contact'];
 
 function SectionHeading({ eyebrow, title, description }) {
   return (
@@ -186,6 +192,20 @@ function App() {
           </div>
         </section>
 
+        <section className="section-wrap content-section" id="education">
+          <SectionHeading eyebrow="MY JOURNEY" title="Education" description="The foundation I'm building as I grow in technology." />
+          <div className="education-card glass-card">
+            <div className="education-symbol"><GraduationCap size={27}/></div>
+            <div className="education-details">
+              <span className="project-category">UNDERGRADUATE</span>
+              <h3>B.Tech — Artificial Intelligence &amp; Machine Learning</h3>
+              <p>Malla Reddy Vishwavidyapeeth Technical Campus</p>
+              <span className="education-year">2025–2029 · Expected graduation: 2029</span>
+            </div>
+            <span className="education-pill">Currently studying</span>
+          </div>
+        </section>
+
         <section className="section-wrap content-section" id="skills">
           <SectionHeading eyebrow="MY TOOLKIT" title="Skills & technologies" description="A growing toolkit across programming, web development, backend systems and AI." />
           <div className="skills-grid">
@@ -212,97 +232,35 @@ function App() {
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tag-list">{project.tags.map(tag => <span className="tag" key={tag}>{tag}</span>)}</div>
-                <div className="project-bottom"><span>Personal project showcase</span><ArrowUpRight size={17}/></div>
+                <div className="project-bottom">
+                  <span>View Project</span>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View ${project.title} GitHub repository`}><ArrowUpRight size={17}/></a>
+                </div>
               </article>;
             })}
           </div>
-          <p className="project-note">Add your GitHub repository or live demo links to each project once they are published.</p>
         </section>
 
-        <section className="section-wrap content-section" id="education">
-         
-          <section className="section-wrap content-section" id="certificates">
-  <SectionHeading
-    eyebrow="MY ACHIEVEMENTS"
-    title="Certificates & Hackathons"
-    description="Certifications, hackathon participation and achievements from my learning journey."
-  />
 
-  <div className="skills-grid">
-    <article className="skill-card glass-card">
-      <div className="skill-card-top">
-        <span className="skill-icon">
-          <GraduationCap size={20} />
-        </span>
-      </div>
-      <h3>Technical Certifications</h3>
-      <p>Add your technical course certificates here.</p>
-    </article>
-
-    <article className="skill-card glass-card">
-      <div className="skill-card-top">
-        <span className="skill-icon">
-          <Sparkles size={20} />
-        </span>
-      </div>
-      <h3>Hackathons</h3>
-      <p>Add your hackathon participation and achievements here.</p>
-    </article>
-
-    <article className="skill-card glass-card">
-      <div className="skill-card-top">
-        <span className="skill-icon">
-          <Code2 size={20} />
-        </span>
-      </div>
-      <h3>Other Achievements</h3>
-      <p>Add workshops, internships and other certificates here.</p>
-    </article>
-  </div>
-</section>
-          <SectionHeading eyebrow="MY JOURNEY" title="Education & achievements" description="The foundation I'm building as I grow in technology." />
-          <div className="education-card glass-card">
-            <div className="education-symbol"><GraduationCap size={27}/></div>
-            <div className="education-details">
-              <span className="project-category">UNDERGRADUATE</span>
-              <h3>B.Tech — Artificial Intelligence &amp; Machine Learning</h3>
-              <p>Mallareddy Vishwavidhyapeeth Technical Campus</p>
-              <span className="education-year">Expected graduation: 2029</span>
-            </div>
-            <span className="education-pill">Currently studying</span>
-          </div>
-          <div className="achievement-placeholder">
-            <div className="achievement-icon"><Sparkles size={20}/></div>
-            <div><b>Certifications &amp; hackathons</b><p>Add your verified certificates, event names, awards and participation details here.</p></div>
-          </div>
-        </section>
         <section className="section-wrap content-section" id="certificates">
-  <SectionHeading
-    eyebrow="MY ACHIEVEMENTS"
-    title="Hackathons & Certifications"
-    description="My hackathon participation, technical achievements and internship experience."
-  />
-
-  <div className="skills-grid">
-    {achievements.map((item, index) => (
-      <article className="skill-card glass-card" key={index}>
-        <div className="skill-card-top">
-          <span className="skill-icon">
-            <GraduationCap size={20} />
-          </span>
-          <span className="skill-index">
-            0{index + 1}
-          </span>
-        </div>
-        <h3>{item}</h3>
-        <span className="project-category">
-          Achievement
-        </span>
-      </article>
-    ))}
-  </div>
-</section>
-      
+          <SectionHeading
+            eyebrow="MY ACHIEVEMENTS"
+            title="Hackathons & Certifications"
+            description="My hackathon participation, technical achievements and internship experience."
+          />
+          <div className="skills-grid">
+            {achievements.map((item, index) => (
+              <article className="skill-card glass-card" key={index}>
+                <div className="skill-card-top">
+                  <span className="skill-icon"><GraduationCap size={20}/></span>
+                  <span className="skill-index">0{index + 1}</span>
+                </div>
+                <h3>{item}</h3>
+                <span className="project-category">Achievement</span>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <section className="section-wrap contact-section" id="contact">
           <div className="contact-card">
@@ -310,7 +268,7 @@ function App() {
             <span className="eyebrow">HAVE A PROJECT IN MIND?</span>
             <h2>Let's build something<br/><span>meaningful.</span></h2>
             <p>I'm always interested in learning, collaborating and connecting with people who love building things.</p>
-            <a className="button button-primary" href="mailto:keerthanatejaswa2@gmail.com?">Say hello <Send size={16}/></a>
+            <a className="button button-primary" href="mailto:keerthanatejaswi2@gmail.com?">Say hello <Send size={16}/></a>
             <div className="contact-links">
               <a href="https://github.com/keerthanatejaswi2-lgtm" target="_blank" rel="noreferrer"><Code2 size={17}/> GitHub <ExternalLink size={12}/></a>
               <a href="https://www.linkedin.com/in/keerthana-tejaswi-59405b398/" target="_blank" rel="noreferrer"><ExternalLink size={17}/> LinkedIn <ExternalLink size={12}/></a>
